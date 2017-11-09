@@ -12,10 +12,10 @@
  * @returns {boolean} true if string contains only unique characters
  */
 export default function hasUniqueCharacters(string) {
-  if (string.length > 256) {
-    return false
+  if (isLongerThan256Characters(string)) {
+    return false;
   }
-  
+
   const charactersSet = new Set();
   let currentChar;
   for (let i = 0, len = string.length; i < len; i++) {
@@ -38,8 +38,8 @@ export default function hasUniqueCharacters(string) {
  * @returns {boolean} true if string contains only unique characters
  */
 export function hasUniqueCharactersSort(string) {
-  if (string.length > 256) {
-    return false
+  if (isLongerThan256Characters(string)) {
+    return false;
   }
   
   const sortedStringAsArray = string.split('').sort();
@@ -50,4 +50,12 @@ export function hasUniqueCharactersSort(string) {
   }
   
   return true;
+}
+
+/**
+ * @param {string} string
+ * @returns {boolean}
+ */
+function isLongerThan256Characters(string) {
+  return string.length > 256;
 }
