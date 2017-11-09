@@ -12,6 +12,10 @@
  * @returns {boolean} true if string contains only unique characters
  */
 export default function hasUniqueCharacters(string) {
+  if (string.length > 256) {
+    return false
+  }
+  
   const charactersSet = new Set();
   let currentChar;
   for (let i = 0, len = string.length; i < len; i++) {
