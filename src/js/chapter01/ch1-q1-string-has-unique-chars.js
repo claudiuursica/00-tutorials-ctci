@@ -1,3 +1,4 @@
+'use strict'
 /**
  * 1. Implement an algorithm to determine if a string has all unique characters.
  * 2. What if you cannot use additional data structures?
@@ -5,13 +6,10 @@
 
 
 /**
- * Time: O(N)
- * Additional space: O(N)
- *
  * @param {string} string - string to check
  * @returns {boolean} true if string contains only unique characters
  */
-export default function hasUniqueCharacters(string) {
+export function hasUniqueCharacters(string) {
   if (isLongerThan256Characters(string)) {
     return false;
   }
@@ -31,13 +29,12 @@ export default function hasUniqueCharacters(string) {
 }
 
 /**
- * Time: O(N lg N)
- * Additional space: O(1)
  *
  * @param {string} string - string to check
  * @returns {boolean} true if string contains only unique characters
  */
 export function hasUniqueCharactersSort(string) {
+  console.log("hasUniqueCharactersSort");
   if (isLongerThan256Characters(string)) {
     return false;
   }
