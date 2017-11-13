@@ -34,7 +34,6 @@ export function hasUniqueCharacters(string) {
  * @returns {boolean} true if string contains only unique characters
  */
 export function hasUniqueCharactersSort(string) {
-  console.log("hasUniqueCharactersSort");
   if (isLongerThan256Characters(string)) {
     return false;
   }
