@@ -1,5 +1,4 @@
-import hasUniqueCharacters from './ch1-q1-string-has-unique-chars';
-import hasUniqueCharactersSort from './ch1-q1-string-has-unique-chars';
+import { hasUniqueCharacters, hasUniqueCharactersSort } from './ch1-q1-string-has-unique-chars';
 
 describe('Function: hasUniqueCharacters', () => {
   
