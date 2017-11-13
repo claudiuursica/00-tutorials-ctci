@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Given two strings, write a method to decide if one is a permutation of the other
  */
@@ -37,15 +38,4 @@ export default function checkPermutation(string1, string2)
   }
   
   return charactersMap.size === 0;
-}
-
-export function checkPermutationSort(string1, string2) {
-  if (!string1 || !string2 || string1.length !== string2.length) {
-    return false;
-  }
-  
-  string1.sort();
-  string2.sort();
-
-  return string1.every((char, i) => char === string2.charAt(i));
 }
