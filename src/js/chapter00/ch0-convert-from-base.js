@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Write a function to check if the value of a binary number (passed as a string)
  * equals the hexadecimal representation of the string
