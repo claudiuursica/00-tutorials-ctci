@@ -10,44 +10,39 @@
  * @param {string} string2
  * @returns {boolean}
  */
-export default function isOneAway(string1, string2) {
+export function isOneAway(string1, string2) {
   if (!string1 || !string2 || Math.abs(string1.length - string2.length) > 1) {
     return false;
   }
-
-  let charactersMap = new Map();
-  let currentCharacter;
-  for (let i = 0, len = string1.length; i < len; i++) {
-    currentCharacter = string1.charAt(i);
-    if (charactersMap.has(currentCharacter)) {
-      charactersMap.set(currentCharacter, charactersMap.get(currentCharacter) + 1);
-    } else {
-      charactersMap.set(currentCharacter, 1);
-    }
-  }
-
-  let j = 0, awayCount = 0;
-  while (j < string2.length) {
-    currentCharacter = string2.charAt(j);
-
-    let count = charactersMap.get(currentCharacter);
-    if (!count)
-    {
-      if (++awayCount > 2) {
+  
+  const areLengthsEqual = string1.length === string2.length;
+  const isFirstStringShorter = string1.length < string2.length;
+  const str1 = isFirstStringShorter ? string1 : string2;
+  const str2 = isFirstStringShorter ? string2 : string1;
+  const len1 = str1.length;
+  const len2 = str2.length;
+  
+  let i = 0;
+  let j = 0;
+  let alreadyFoundDifference = false;
+  while (i < len1 && j < len2) {
+    if (str1.charAt(i) !== str2.charAt(j)) {
+      if (alreadyFoundDifference) {
         return false;
       }
-    }
-    else
-    {
-      if (count === 1) {
-        charactersMap.delete(currentCharacter);
-      } else {
-        charactersMap.set(currentCharacter, count - 1);
+      
+      alreadyFoundDifference = true;
+      
+      if (areLengthsEqual) {
+        i++;
       }
     }
-
-    j++;
+    else {
+      i++;
+    }
+    
+    j++
   }
-
-  return charactersMap.size < 2;
+  
+  return true;
 }
