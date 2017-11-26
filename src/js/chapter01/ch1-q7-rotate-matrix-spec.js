@@ -2,7 +2,7 @@ import rotateMatrix from "./ch1-q7-rotate-matrix";
 
 describe('Function: rotateMatrix', () => {
   
-  fit('should return the rotated matrix', () => {
+  it('should return the rotated matrix', () => {
     const test_2X2_matrix = [
       [1, 2],
       [3, 4]
@@ -12,9 +12,9 @@ describe('Function: rotateMatrix', () => {
       [3, 1],
       [4, 2]
     ];
-  
+
     expect(rotateMatrix(test_2X2_matrix)).toEqual(rotated_2X2_matrix);
-  
+
     const test_3X3_matrix = [
       [1, 2, 3],
       [4, 5, 6],
