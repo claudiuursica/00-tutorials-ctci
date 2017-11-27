@@ -40,5 +40,4 @@ export default function rotateMatrix (matrix) {
   }
 
   return matrix;
-
 }
