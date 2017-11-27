@@ -6,6 +6,7 @@
 
 /**
  * @param {Array.<number, number>} matrix
+ * @returns @param {Array.<number, number>} matrix
  */
 export default function rotateMatrix (matrix) {
   if (!matrix || !matrix.length || !matrix[0] || matrix.length !== matrix[0].length) {
