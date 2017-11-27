@@ -1,6 +1,10 @@
 'use strict';
 
 /**
+ * Write a program to rotate a NxN matrix by 90 degress. Can you do this in place?
+ */
+
+/**
  * @param {Array.<number, number>} matrix
  */
 export default function rotateMatrix (matrix) {
